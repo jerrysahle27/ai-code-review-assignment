@@ -46,6 +46,9 @@ See `correct_task1.py`
 
 If you were to test this function, what areas or scenarios would you focus on, and why?
 
+When testing the corrected calculate_average_order_value function, I would focus on "Empty or invalid inputs", "Orders with cancelled status",
+"Orders with missing keys or invalid types", "Mixed valid and invalid orders", "All orders cancelled or invalid", "Normal valid input", to ensure robustness and correctness.
+
 ## 3) Explanation Review & Rewrite
 
 ### AI-generated explanation (original)
@@ -86,7 +89,7 @@ The original function calculates the average order value by summing the amounts 
 
 ### Code quality / design issues
 
--
+- There is a design issue in the original code: it only checks if a character exists in the string rather than validating it as a proper email address.
 
 ## 2) Proposed Fixes / Improvements
 
