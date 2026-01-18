@@ -109,7 +109,9 @@ See `correct_task2.py`
 
 If you were to test this function, what areas or scenarios would you focus on, and why?
 
-testing should focus on resiliency and precision. Because the new code includes "guards" (checks to prevent crashes), we need to ensure those guards actually work when the data is messy.
+When testing the Count Valid Emails function, I would focus on two main areas: crash prevention and pattern accuracy.
+
+First, I’d test messy inputs by passing None, empty lists, or lists with numbers instead of strings. This confirms the "guards" work and the code won't crash on bad data. Second, I’d test the regex precision by using "fake" emails that a simple search would miss—like @@@ or name@com—to make sure only real, properly formatted addresses are counted. Finally, I’d include modern email styles, like those ending in .info or containing dots and underscores, to ensure the new rules aren't too strict.
 
 ## 3) Explanation Review & Rewrite
 
@@ -188,6 +190,10 @@ See `correct_task3.py`
 ### Testing Considerations
 
 If you were to test this function, what areas or scenarios would you focus on, and why?
+
+When testing the Aggregate Valid Measurements function, I would focus on several key scenarios to ensure the corrected logic is robust. First, I’d check empty or null inputs to verify the "Input Guards" prevent a ZeroDivisionError or a NoneType crash. Next, I would test lists with missing values (None) to ensure the math is calculated only using valid numbers, meaning the divisor correctly ignores the empty slots.
+
+I would also focus heavily on data type resilience, specifically testing how the function handles data like Booleans (True/False) and numeric strings (like "10.5"). Since Python treats Booleans as numbers, it's vital to confirm they are explicitly excluded so they don't skew the average. Finally, I’d test mixed valid and invalid entries—such as a list containing a float, a string, and a dictionary—to make sure the function skips the garbage data and returns an accurate average for the remaining numbers without crashing.
 
 ## 3) Explanation Review & Rewrite
 
