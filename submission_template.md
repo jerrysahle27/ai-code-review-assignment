@@ -24,7 +24,8 @@ Data Type Sensitivity: If "amount" is passed as a string, the code crashes becau
 
 ### Code quality / design issues
 
--
+- Poor separation of concerns
+  Validation, aggregation, and averaging are not clearly handled.
 
 ## 2) Proposed Fixes / Improvements
 
